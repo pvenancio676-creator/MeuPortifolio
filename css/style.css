@@ -2765,3 +2765,525 @@ body.light .about__content h2 span {
 body.light .tech-logo img[alt="GitHub"] {
     filter: none;
 }
+
+/* =========================================================
+   REVISÃO FINAL — RESPONSIVIDADE FLUIDA
+   ========================================================= */
+
+/* Espaçamentos e tipografia passam a diminuir de forma gradual,
+   em vez de depender apenas de poucos breakpoints. */
+.container {
+    width: min(92vw, var(--container));
+}
+
+.section {
+    padding-block: clamp(58px, 8vw, 96px);
+}
+
+.hero {
+    min-height: clamp(620px, 78vh, 760px);
+    padding-top: clamp(96px, 11vw, 125px);
+    padding-bottom: clamp(48px, 7vw, 70px);
+}
+
+.hero__grid {
+    gap: clamp(24px, 4vw, 58px);
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5.3vw, 70px);
+}
+
+.hero h2 {
+    font-size: clamp(23px, 3vw, 39px);
+}
+
+.hero__text {
+    width: min(100%, 430px);
+    font-size: clamp(11px, 1.1vw, 13px);
+}
+
+.hero__visual {
+    min-height: clamp(300px, 38vw, 420px);
+}
+
+.laptop {
+    width: min(100%, 600px);
+}
+
+.phone {
+    right: clamp(-4px, -0.5vw, 0px);
+    bottom: clamp(26px, 4vw, 43px);
+}
+
+/* Sobre: ícones menores e proporcionais. */
+.about__points {
+    gap: clamp(18px, 3vw, 38px);
+}
+
+.about__points > div {
+    gap: 8px;
+}
+
+.point-icon,
+.point-icon img {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    min-height: 17px;
+}
+
+.point-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 17px;
+    font-size: 14px;
+}
+
+.point-icon img {
+    object-fit: contain;
+}
+
+.about__points p {
+    font-size: clamp(9px, 1vw, 10px);
+}
+
+.about__points small {
+    font-size: clamp(8px, .9vw, 9px);
+}
+
+.tech-grid,
+.project-grid,
+.service-grid {
+    width: 100%;
+}
+
+.tech-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.project-content p {
+    min-height: auto;
+}
+
+.service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.contact__grid {
+    gap: clamp(28px, 5vw, 50px);
+}
+
+/* =========================================================
+   TELAS MENORES — LAYOUT REORGANIZADO
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .hero__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero__content {
+        max-width: 700px;
+        margin-inline: auto;
+    }
+
+    .hero__visual {
+        width: min(100%, 700px);
+        margin-inline: auto;
+    }
+
+    .about__grid {
+        max-width: 760px;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: clamp(22px, 4vw, 35px);
+    }
+
+    .portrait {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: min(91vw, 620px);
+    }
+
+    .header__inner {
+        min-height: 64px;
+    }
+
+    .header__actions {
+        gap: 12px;
+    }
+
+    .theme-button {
+        gap: 6px;
+    }
+
+    .hero {
+        padding-top: 96px;
+    }
+
+    .hero__content {
+        text-align: center;
+    }
+
+    .hero__text {
+        margin-inline: auto;
+    }
+
+    .hero__buttons,
+    .socials {
+        justify-content: center;
+    }
+
+    .hero__visual {
+        min-height: clamp(255px, 55vw, 360px);
+    }
+
+    .laptop {
+        width: min(94vw, 600px);
+    }
+
+    .laptop__screen {
+        height: clamp(170px, 31vw, 240px);
+    }
+
+    .phone {
+        width: clamp(72px, 11vw, 96px);
+        height: clamp(148px, 24vw, 196px);
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .portrait {
+        width: clamp(135px, 28vw, 170px);
+        height: clamp(135px, 28vw, 170px);
+    }
+
+    .about__content {
+        width: 100%;
+    }
+
+    .about__text {
+        margin-inline: auto;
+    }
+
+    .about__points {
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 14px;
+    }
+
+    .point-icon,
+    .point-icon img {
+        width: 15px;
+        height: 15px;
+        min-width: 15px;
+        min-height: 15px;
+    }
+
+    .point-icon {
+        flex-basis: 15px;
+        font-size: 12px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        max-width: 560px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 18px;
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .email-card {
+        width: min(100%, 360px);
+        max-width: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        width: min(90vw, 460px);
+    }
+
+    .hero h1 {
+        font-size: clamp(38px, 12.5vw, 54px);
+        letter-spacing: -1.3px;
+    }
+
+    .hero h2 {
+        font-size: clamp(22px, 7.2vw, 28px);
+    }
+
+    .hero__text {
+        font-size: 11.5px;
+        line-height: 1.7;
+    }
+
+    .hero__buttons {
+        width: min(100%, 330px);
+        margin-inline: auto;
+        flex-direction: column;
+    }
+
+    .hero__buttons .button {
+        width: 100%;
+    }
+
+    .hero__visual {
+        min-height: clamp(230px, 57vw, 285px);
+    }
+
+    .laptop {
+        width: min(92vw, 500px);
+    }
+
+    .laptop__screen {
+        height: clamp(145px, 31vw, 185px);
+        padding: 5px;
+    }
+
+    .laptop__base {
+        height: clamp(9px, 2.7vw, 13px);
+    }
+
+    .code-lines {
+        padding: clamp(9px, 2.8vw, 13px);
+        font-size: clamp(4.5px, 1.25vw, 6px);
+        line-height: 1.85;
+    }
+
+    .phone {
+        right: -2px;
+        bottom: clamp(20px, 5vw, 29px);
+        width: clamp(58px, 16vw, 74px);
+        height: clamp(118px, 31vw, 150px);
+        padding: 3px;
+        border-radius: 12px;
+    }
+
+    .phone__speaker {
+        width: 19px;
+        height: 3px;
+        top: 4px;
+    }
+
+    .phone__screen {
+        padding: 14px 5px 5px;
+        border-radius: 8px;
+    }
+
+    .phone__top {
+        font-size: 4px;
+    }
+
+    .phone__hero-image {
+        height: clamp(32px, 10vw, 44px);
+        margin: 6px -5px;
+    }
+
+    .phone__screen > strong {
+        font-size: clamp(6px, 1.8vw, 8px);
+    }
+
+    .phone__screen > small {
+        font-size: clamp(3px, .9vw, 4px);
+    }
+
+    .phone__screen button {
+        margin-top: 4px;
+        padding: 3px 5px;
+        font-size: 4px;
+    }
+
+    .phone__code {
+        margin-top: 5px;
+        padding: 3px;
+        font-size: clamp(2.7px, .75vw, 3.5px);
+        line-height: 1.55;
+    }
+
+    .phone__mini-nav {
+        margin-top: 3px;
+    }
+
+    .phone__cards {
+        margin-top: 5px;
+    }
+
+    .phone__cards span {
+        height: 14px;
+    }
+
+    .section-heading,
+    .projects-heading {
+        gap: 18px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tech-card {
+        min-height: 88px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .service {
+        max-width: 380px;
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-button,
+    .contact-button:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .footer__inner {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 390px) {
+    .container {
+        width: min(88vw, 350px);
+    }
+
+    .header__inner {
+        min-height: 60px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .theme-track {
+        width: 22px;
+        height: 13px;
+    }
+
+    .theme-track span {
+        width: 9px;
+        height: 9px;
+    }
+
+    .hero {
+        padding-top: 88px;
+    }
+
+    .hero__visual {
+        min-height: 215px;
+    }
+
+    .phone {
+        right: -1px;
+    }
+
+    .hero__buttons {
+        width: 100%;
+    }
+
+    .socials {
+        gap: 15px;
+    }
+
+    .about__points {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .about__points > div {
+        width: fit-content;
+    }
+
+    .point-icon,
+    .point-icon img {
+        width: 14px;
+        height: 14px;
+        min-width: 14px;
+        min-height: 14px;
+    }
+
+    .point-icon {
+        flex-basis: 14px;
+    }
+
+    .filters {
+        width: 100%;
+        border-radius: 10px;
+        justify-content: center;
+    }
+
+    .filter {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 340px) {
+    .container {
+        width: min(86vw, 320px);
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero__visual {
+        min-height: 190px;
+    }
+
+    .laptop__screen {
+        height: 132px;
+    }
+
+    .phone {
+        width: 55px;
+        height: 112px;
+        bottom: 17px;
+    }
+
+    .phone__code {
+        display: none;
+    }
+}
